@@ -19,7 +19,13 @@ io.on("connection", socket => {
     socket.emit("your-id", socket.id);
 
     socket.on("client-message", data => {
-        state.chats[data.room].msgs.push({ room: data.room, id: data.id, username: data.username, body: data.body, time: new Date().toLocaleString() });
+        state.chats[data.room].msgs.push({
+            room: data.room,
+            id: data.id,
+            username: data.username,
+            body: data.body,
+            time: new Date().toLocaleString()
+        });
         let msgs = state.chats[data.room].msgs;
         io.in(data.room).emit("server-message", msgs);
     });
@@ -34,7 +40,13 @@ io.on("connection", socket => {
             socket.leave(data.room);
             loginStatus = false;
         }
-        state.chats[data.room].msgs.push({ room: data.room, id: "System", username: "System", body: `${data.username} has ${data.actionType === 'join-room' ? 'joined' : 'left'} the ${data.room} chat room.`, time: new Date().toLocaleString() });
+        state.chats[data.room].msgs.push({
+            room: data.room,
+            id: "System",
+            username: "System",
+            body: `${data.username} has ${data.actionType === 'join-room' ? 'joined' : 'left'} the ${data.room} chat room.`,
+            time: new Date().toLocaleString()
+        });
         let msgs = state.chats[data.room].msgs;
         io.to(socket.id).emit("login", loginStatus);
         io.in(data.room).emit("server-message", msgs);
