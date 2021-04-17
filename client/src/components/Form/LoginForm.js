@@ -21,7 +21,7 @@ const LoginForm = ({ onLogin, username, setUsername, onKeyPressed, selectRoom })
                     <select id="dropdown" className="room-select" defaultValue="General" onChange={(e) => selectRoom(e.target.value)}>
                         <option value="General">General</option>
                         <option value="Sports">Sports</option>
-                        <option value="Marketing">Marketing</option>
+                        <option value="Music">Music</option>
                     </select>
                 </div>
             </div>

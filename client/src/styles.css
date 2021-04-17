@@ -38,8 +38,8 @@ textarea::placeholder {
   outline: none;
   color: rgb(221, 71, 71);
   letter-spacing: 1px;
-  line-height: 20px;
-  margin: 3px;
+  line-height: 40px;
+  margin: 3px 8px;
 }
 
 .selection-container {
@@ -48,15 +48,14 @@ textarea::placeholder {
   height: 45px;
   border-radius: 10px;
   margin: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding: 7px;
   font-size: 17px;
   background-color: transparent;
   border: 1px solid lightgray;
   outline: none;
   color: rgb(209, 110, 110);
   letter-spacing: 1px;
-  line-height: 20px;
+  line-height: 45px;
 }
 
 .my-area {
